@@ -74,3 +74,25 @@ footer p{margin:4px 0}
 .collage figure.reveal{transition:opacity .9s ease}
 .logo img,.hero h1 img{mix-blend-mode:multiply}
 .collage{row-gap:48px}
+
+/* ---- Split-Hero: Bild schiebt sich beim Scrollen nach links ---- */
+.hero{display:block;min-height:0;height:200vh;padding:0;text-align:center}
+.hero-sticky{position:sticky;top:0;height:100vh;overflow:hidden}
+.hero-text{position:absolute;inset:0 50% 0 0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:90px 24px 24px;will-change:transform,opacity}
+.hero-text .scroll-hint{bottom:28px;left:50%}
+.hero-photo{position:absolute;inset:0;clip-path:inset(0 0 0 calc((1 - var(--p,0)) * 50%));will-change:clip-path}
+.hero-photo img{width:100%;height:100%;object-fit:cover;display:block;mix-blend-mode:normal}
+.hero-caption{position:absolute;left:0;right:0;bottom:12%;margin:0;color:#fff;font:italic 400 clamp(28px,5vw,56px) var(--serif);text-shadow:0 2px 20px rgba(0,0,0,.5);opacity:var(--cap,0)}
+.hero-photo::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,calc(var(--p,0) * .25));pointer-events:none}
+@media(max-width:799px){
+ .hero-text{inset:0 0 50% 0;padding-top:80px}
+ .hero-photo{clip-path:inset(calc((1 - var(--p,0)) * 50%) 0 0 0)}
+ .hero-text .scroll-hint{display:none}
+}
+@media(max-width:799px){
+ .hero-text{padding:70px 16px 8px}
+ .hero h1 img{width:min(150px,40vw)}
+ .hero .eyebrow{font-size:13px}
+ .hero .tagline{font-size:14px;margin-bottom:14px;line-height:1.4}
+ .hero .btn{padding:9px 22px;font-size:15px}
+}

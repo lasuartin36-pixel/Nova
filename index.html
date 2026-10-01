@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <link rel="icon" href="logo.png">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=4">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"CafeOrCoffeeShop","name":"Nova Café & Bistro","telephone":"+49 7643 2100124","priceRange":"1–10 €","servesCuisine":"Café, Bistro","address":{"@type":"PostalAddress","streetAddress":"Bismarckstraße 19b","postalCode":"79336","addressLocality":"Herbolzheim","addressCountry":"DE"}}
 </script>
@@ -21,14 +21,20 @@
   <nav><a href="#about">Über uns</a><a href="#menu">Speisekarte</a><a href="#visit">Besuch</a></nav>
 </header>
 
-<section class="hero" id="top">
-  <div class="hero-inner" data-hero>
-  <p class="eyebrow">Café &amp; Bistro · Herbolzheim</p>
-  <h1><img src="logo.png" alt="NOVA – Café &amp; Bistro"></h1>
-  <p class="tagline">Der beste Start in den Tag beginnt mit einer Tasse Kaffee.</p>
-  <a class="btn" href="#menu">Zur Speisekarte</a>
+<section class="hero" id="top" data-hero>
+  <div class="hero-sticky">
+    <div class="hero-text">
+      <p class="eyebrow">Café &amp; Bistro · Herbolzheim</p>
+      <h1><img src="logo.png" alt="NOVA – Café &amp; Bistro"></h1>
+      <p class="tagline">Der beste Start in den Tag beginnt mit einer Tasse Kaffee.</p>
+      <a class="btn" href="#menu">Zur Speisekarte</a>
+      <a class="scroll-hint" href="#about" aria-label="Weiter scrollen"><span></span></a>
+    </div>
+    <div class="hero-photo">
+      <img src="img/aussen.png" alt="Café Nova von außen">
+      <p class="hero-caption">Willkommen im Café Nova</p>
+    </div>
   </div>
-  <a class="scroll-hint" href="#about" aria-label="Weiter scrollen"><span></span></a>
 </section>
 
 <section class="about" id="about">
@@ -91,6 +97,6 @@
   <p>© <span id="y">2026</span> Café Nova · Bismarckstraße 19b · 79336 Herbolzheim</p>
   <p><a href="#">Impressum</a> · <a href="#">Datenschutz</a></p>
 </footer>
-<script src="script.js"></script>
+<script src="script.js?v=4"></script>
 </body>
 </html>

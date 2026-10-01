@@ -29,6 +29,7 @@ document.querySelectorAll('.card').forEach(c => io.observe(c));
 const bar = document.querySelector('.progress');
 const header = document.querySelector('.site-header');
 const hero = document.querySelector('[data-hero]');
+const text = document.querySelector('.hero-text');
 const parallax = [...document.querySelectorAll('[data-speed]')];
 let lastY = 0, ticking = false;
 function update() {
@@ -37,9 +38,12 @@ function update() {
   header.classList.toggle('hide', y > lastY && y > 120);
   lastY = y;
   if (!reduce) {
-    if (y < innerHeight) {
-      hero.style.transform = `translateY(${y * 0.25}px) scale(${1 - y / innerHeight * 0.08})`;
-      hero.style.opacity = 1 - y / innerHeight * 0.9;
+    if (y < innerHeight * 1.2) {
+      const p = Math.min(1, y / (innerHeight * 0.8));
+      hero.style.setProperty('--p', p);
+      hero.style.setProperty('--cap', Math.max(0, (p - 0.6) / 0.4));
+      text.style.transform = `translateX(${-p * 60}px)`;
+      text.style.opacity = 1 - p * 0.7;
     }
     parallax.forEach(el => {
       const r = el.getBoundingClientRect();
